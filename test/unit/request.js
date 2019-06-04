@@ -56,29 +56,29 @@ test('Request can only be rejected or accepted once.', function(t) {
 
 test('Protocol mismatch should be handled gracefully', function(t) {
   var wsServer;
-  
+
   t.test('setup', function(t) {
     server.prepare(function(err, result) {
       if (err) {
         t.fail('Unable to start test server');
         return t.end();
       }
-      
+
       wsServer = result;
       t.end();
     });
   });
-  
+
   t.test('mismatched protocol connection', function(t) {
     t.plan(2);
     wsServer.on('request', handleRequest);
-    
+
     var client = new WebSocketClient();
-    
+
     var timer = setTimeout(function() {
       t.fail('Timeout waiting for client event');
     }, 2000);
-    
+
     client.connect('ws://localhost:64321/', 'some_protocol_here');
     client.on('connect', function(connection) {
       clearTimeout(timer);
@@ -89,15 +89,13 @@ test('Protocol mismatch should be handled gracefully', function(t) {
       clearTimeout(timer);
       t.pass('connectFailed event should be emitted on client');
     });
-    
-    
-    
+
     function handleRequest(request) {
       var accept = request.accept.bind(request, 'this_is_the_wrong_protocol', request.origin);
       t.throws(accept, 'request.accept() should throw');
     }
   });
-  
+
   t.test('teardown', function(t) {
     stopServer();
     t.end();
