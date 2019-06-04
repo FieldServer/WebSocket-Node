@@ -1,0 +1,22 @@
+env:
+  - INTRAVENOUS=yes
+
+os:
+  - linux
+
+branches:
+  only:
+    - master
+
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+
+language: node_js
+node_js:
+  - "10"
+  - "12
+
+#script: "npm run-script test"
+script: "npm run test"
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+after_failure: "cat /home/travis/build/happner/happner/npm-debug.log"
