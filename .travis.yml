@@ -1,17 +1,27 @@
-env:
-  - INTRAVENOUS=yes
-
 os:
   - linux
+# - osx
+# OSX tests are disabled by default. They should be enabled for all packages related to:
+# - SMC Toolchain
+# - PE, AE Core App and SMC SDK
+
+language: node_js
+node_js:
+  # please delete node_js versions that are no longer used in production
+  # always test against next stable (preferred) or unstable version
+  - '12'
+  - '14'
+  - '15'
 
 branches:
   only:
     - master
+    - feature/SMC-1115
 
-language: node_js
-node_js:
-  - "10"
-  - "12"
+before_install:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
+  - npm whoami
+
 
 script: "npm run test"
 after_failure: "cat /home/travis/build/happner/happner/npm-debug.log"
