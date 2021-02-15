@@ -18,10 +18,5 @@ branches:
     - master
     - feature/SMC-1115
 
-before_install:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
-  - npm whoami
-
-
 script: "npm run test"
 after_failure: "cat /home/travis/build/happner/happner/npm-debug.log"
