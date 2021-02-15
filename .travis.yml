@@ -16,7 +16,6 @@ node_js:
 branches:
   only:
     - master
-    - feature/SMC-1115
 
 script: "npm run test"
 after_failure: "cat /home/travis/build/happner/happner/npm-debug.log"
