@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 2.0.0 (SMC)
+--------------------
+*Released to SMC 2021-02-15*
+* SMC-1115 - smc_update, migrate to node 15 testing
+
 Version 1.0.32 (Upstream)
 --------------
 *Released 2020-08-28*
