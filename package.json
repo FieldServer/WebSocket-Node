@@ -1,5 +1,6 @@
 {
   "name": "@smc/websocket",
+  "version": "2.0.0",
   "description": "SMC's fork - Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.",
   "keywords": [
     "websocket",
@@ -13,18 +14,30 @@
     "server",
     "client"
   ],
-  "author": "Brian McKelvey <theturtle32@gmail.com> (https://github.com/theturtle32)",
-  "contributors": [
-    "Iñaki Baz Castillo <ibc@aliax.net> (http://dev.sipdoc.net)"
-  ],
-  "version": "1.0.32",
+  "homepage": "https://github.com/FieldServer/WebSocket-Node",
+  "bugs": {
+    "url": "https://jira.msasafety.com/issues/?jql=project%20=%20SMC%20AND%20status%20in%20(QA,%20%22To%20Do%22,%20%22Peer%20Review%22,%20%22In%20Progress%22,%20New)%20AND%20component%20=%20websocket"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/FieldServer/WebSocket-Node.git"
   },
-  "homepage": "https://github.com/FieldServer/WebSocket-Node",
-  "engines": {
-    "node": ">=4.0.0"
+  "license": "Apache-2.0",
+  "author": "Brian McKelvey <theturtle32@gmail.com> (https://github.com/theturtle32)",
+  "contributors": [
+    "Iñaki Baz Castillo <ibc@aliax.net> (http://dev.sipdoc.net)"
+  ],
+  "main": "index",
+  "browser": "lib/browser.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "test": "tape test/unit/*.js"
+  },
+  "config": {
+    "verbose": false
   },
   "dependencies": {
     "bufferutil": "^4.0.1",
@@ -38,21 +51,11 @@
     "buffer-equal": "^1.0.0",
     "gulp": "^4.0.2",
     "gulp-jshint": "^2.0.4",
-    "jshint-stylish": "^2.2.1",
     "jshint": "^2.0.0",
+    "jshint-stylish": "^2.2.1",
     "tape": "^4.9.1"
   },
-  "config": {
-    "verbose": false
-  },
-  "scripts": {
-    "test": "tape test/unit/*.js",
-    "gulp": "gulp"
-  },
-  "main": "index",
-  "directories": {
-    "lib": "./lib"
-  },
-  "browser": "lib/browser.js",
-  "license": "Apache-2.0"
+  "engines": {
+    "node": ">=4.0.0"
+  }
 }
