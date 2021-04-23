@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 2.1.1 (SMC)
+--------------------
+*Released to SMC 2021-04-23*
+* SMC-2209 - Fix method to end tunnel
+
 Version 2.1.0 (SMC)
 --------------------
 *Released to SMC 2021-04-23*
