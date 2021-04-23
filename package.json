@@ -1,6 +1,6 @@
 {
   "name": "@smc/websocket",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "SMC's fork - Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.",
   "keywords": [
     "websocket",

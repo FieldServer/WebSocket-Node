@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 2.1.0 (SMC)
+--------------------
+*Released to SMC 2021-04-23*
+* SMC-2209 - add client side timeout if we don't receive ping
+
 Version 2.0.0 (SMC)
 --------------------
 *Released to SMC 2021-02-15*
